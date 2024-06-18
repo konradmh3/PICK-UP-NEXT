@@ -23,6 +23,9 @@ export default function Navlinks() {
         {
           'bg-sky-100 text-blue-600': pathname === link.href,
         },
+        {
+            'text-gray-900': pathname !== link.href,
+        },
       )}>
         <p>{link.name}</p>
     </Link>
