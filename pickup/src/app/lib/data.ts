@@ -35,3 +35,24 @@ export async function fetchFilteredRestaurants(
     throw new Error('Failed to fetch restaurants.');
   }
 }
+
+export async function fetchRestaurantPages(query: string) {
+  noStore();
+
+  try {
+    const count = await sql`SELECT COUNT(*)
+    FROM restaurants
+    WHERE
+        restaurants.id::text ILIKE ${`%${query}%`} OR
+        restaurants.name::text ILIKE ${`%${query}%`} OR
+        restaurants.phone ILIKE ${`%${query}%`} OR
+        restaurants.address ILIKE ${`%${query}%`}
+  `;
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch total number of invoices.');
+  }
+}
