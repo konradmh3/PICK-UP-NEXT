@@ -1,4 +1,4 @@
-import { sql } from '
+import { sql } from '@vercel/postgres';
 import {
   RestaurantsTable,
 } from './definitions';
