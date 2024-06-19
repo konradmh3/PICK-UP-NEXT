@@ -15,8 +15,9 @@ export default function Nav() {
           <p className="text-[44px]">Pick Up</p>
         </div>
       </Link>
-      <div className="flex grow flex-row justif-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
-        <Navlinks/>
+      <div className="flex flex-row justif-between space-x-2 md:h-full md:flex-col md:space-x-0 md:space-y-2">
+        <Navlinks/>      
+        <div className='hidden grow gap-2 rounded-md bg-gray-50 p-2 px-3 md:block'></div>
       </div>
 
     </div>
