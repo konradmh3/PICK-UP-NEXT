@@ -28,7 +28,6 @@ export async function fetchFilteredRestaurants(
       ORDER BY restaurants.name DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
-
     return restaurants.rows;
   } catch (error) {
     console.error('Database Error:', error);
@@ -54,5 +53,21 @@ export async function fetchRestaurantPages(query: string) {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch total number of invoices.');
+  }
+}
+
+export async function fetchRestrauntMenu(id: number) {
+  noStore();
+
+  try {
+    const menu = await sql`SELECT restaurants.name, menus.menuitem, menus.customize FROM 
+    menus INNER JOIN restaurants ON menus.restaurantid = restaurants.id WHERE restaurants.id = ${id}`;
+    console.log('menu:', menu);
+    console.log('menu.rows:', menu.rows);
+    return menu.rows;
+  }
+  catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch menu.');
   }
 }

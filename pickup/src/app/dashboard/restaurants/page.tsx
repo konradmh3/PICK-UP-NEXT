@@ -3,6 +3,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { Suspense } from 'react';
 import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { fetchRestaurantPages } from '@/app/lib/data';
+import { fetchRestrauntMenu } from '@/app/lib/data';
 
 import Table from '@/app/ui/table';
 import Pagination from '@/app/ui/pagination';
@@ -23,6 +24,7 @@ export default async function restaurants({
   const currentPage = Number(searchParams?.page || 1);
 
   const totalPages = await fetchRestaurantPages(query);
+  const restarauntMenuItems =  await fetchRestrauntMenu(2);
 
     return <div className="w-full">
     <div className="flex w-full items-center justify-between">
