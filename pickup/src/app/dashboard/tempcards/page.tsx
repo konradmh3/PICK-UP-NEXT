@@ -1,5 +1,6 @@
 import { lusitana } from "@/app/ui/fonts";
 import { fetchRestrauntMenu } from '@/app/lib/data';
+import MenuItemCard from '@/app/ui/menucard';
 
 export default async function Tempcards({
     searchParams,
@@ -10,16 +11,22 @@ export default async function Tempcards({
   }) {
 
     const restaurantID = Number(searchParams?.restaurantID || '');
-
     const restarauntMenuItems =  await fetchRestrauntMenu(restaurantID);
-    console.log(restarauntMenuItems);
-    // above calls the function to fetch the data from the database and the param is the restaraunt id. We need to get
-    // the id from which restaraunt the user clicked on add it to the url and then get it from the url and pass it to the function
+    var restaurantName = 'Select A Restaurant Menu in the Restaurant Page';
+    
+    if(restarauntMenuItems[0] !== undefined){
+        restaurantName = restarauntMenuItems[0].name + " Menu:";
+    }
 
   return(
   <div className="w-full">
     <div className="flex w-full items-center justify-between">
-      <h1 className={`${lusitana.className} text-2xl`}>Restaurants</h1>
+      <h1 className={`${lusitana.className} text-2xl`}>{restaurantName}</h1>
+    </div>
+    <div className="mt-4 flex gap-2 md:mt-8 md:justify-flex-start text-black">
+      {restarauntMenuItems.map((item) => (
+        <MenuItemCard key={item.id} item={item}/>
+        ))}
     </div>
   </div>
   );
