@@ -22,9 +22,12 @@ export default async function restaurants({
 
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page || 1);
+  // above his how to recieve something from the url
 
   const totalPages = await fetchRestaurantPages(query);
   const restarauntMenuItems =  await fetchRestrauntMenu(2);
+  // above calls the function to fetch the data from the database and the param is the restaraunt id. We need to get
+  // the id from which restaraunt the user clicked on add it to the url and then get it from the url and pass it to the function
 
     return <div className="w-full">
     <div className="flex w-full items-center justify-between">
