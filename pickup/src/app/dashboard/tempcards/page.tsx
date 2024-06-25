@@ -23,7 +23,7 @@ export default async function Tempcards({
     <div className="flex w-full items-center justify-between">
       <h1 className={`${lusitana.className} text-2xl`}>{restaurantName}</h1>
     </div>
-    <div className="mt-4 flex gap-2 md:mt-8 md:justify-flex-start text-black">
+    <div className="mt-4 flex flex-col gap-2 md:mt-8 md:justify-flex-start md:flex-row text-black">
       {restarauntMenuItems.map((item) => (
         <MenuItemCard key={item.id} item={item}/>
         ))}

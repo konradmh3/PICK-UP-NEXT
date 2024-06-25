@@ -1,8 +1,8 @@
-export default function MenuItemCard({ item }: { item: { name: string; plate: string; customize: Array<string>}}) {
+export default function MenuItemCard({ item }: { item: { name: string; menuitem: string; customize: Array<string>}}) {
     return (
-        <div className="w-64 h-48 bg-gray-100 rounded-md p-2">
-            <div className="flex flex-row items-center justify-between">
-                <p className="text-lg">{item.name}</p>
+        <div className="h-48 bg-gray-100 rounded-md p-2 md:w-64">
+            <div className="flex flex-row items-center justify-between flex-wrap">
+                <p className="text-lg">{item.menuitem}</p>
                 <p className="text-lg">$10</p>
             </div>
             <p className="text-sm">

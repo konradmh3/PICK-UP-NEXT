@@ -8,6 +8,6 @@ export type RestaurantsTable = {
   export type MenuTable = {
     id: string;
     name: string;
-    plate: string;
+    menuitem: string;
     customize: Array<string>;
   };
