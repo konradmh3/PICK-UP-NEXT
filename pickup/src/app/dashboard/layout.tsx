@@ -2,7 +2,7 @@ import Nav from "@/app/ui/nav";
 
 export default function Layout({ children }: { children: React.ReactNode }){
     return (
-    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+    <div className="flex  flex-col md:h-screen md:flex-row md:overflow-hidden">
         <div className="flex-none  md:w-64">
             <Nav/>
         </div>
