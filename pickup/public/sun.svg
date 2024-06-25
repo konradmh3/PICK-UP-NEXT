@@ -1,6 +1,6 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    style="background-color: rgb(1,4,12); border-radius: 10px;"
+    style="background-color: rgb(1,4,12,0); border-radius: 10px;"
     width="200"
     height="200"
 >
