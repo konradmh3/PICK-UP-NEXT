@@ -19,7 +19,7 @@ export default async function Tempcards({
     }
 
   return(
-  <div className="w-full">
+  <div className="w-full max-w-7xl">
     <div className="flex w-full items-center justify-between">
       <h1 className={`${lusitana.className} text-2xl`}>{restaurantName}</h1>
     </div>
