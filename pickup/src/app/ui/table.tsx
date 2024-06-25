@@ -33,7 +33,7 @@ export default async function RestaurantsTable({
                   <div>
                     <p className="text-black">{restaurant.address}</p>
                   </div>
-                  <div>
+                  <div className="pl-3">
                     <Link
                       href={`/dashboard/tempcards?restaurantID=${restaurant.id}`}
                       className="text-blue-500"
@@ -84,7 +84,7 @@ export default async function RestaurantsTable({
                       href={`/dashboard/tempcards?restaurantID=${restaurant.id}`}
                       className="text-blue-500"
                     >
-                      View Menu
+                      View
                     </Link>
                   </td>
                 </tr>
