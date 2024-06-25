@@ -12,10 +12,10 @@ import { usePathname } from 'next/navigation';
           name: 'Restaurants',
           href: '/dashboard/restaurants'
         },
-        {
-            name: 'Tempcards',
-            href: '/dashboard/tempcards'
-        }
+        // {
+        //     name: 'Tempcards',
+        //     href: '/dashboard/tempcards'
+        // }
       ];
 export default function Navlinks() {
     const pathname = usePathname();
