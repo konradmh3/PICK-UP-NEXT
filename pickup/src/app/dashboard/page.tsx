@@ -29,12 +29,12 @@ export default function dashboard() {
             Go to Restaurants and order!
           </p>
         </Link>
-        <Link href="/dashboard/restaurants">
+        <Link href="/dashboard/restaurants/manage">
           <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30 ">
             Add your Restaurant!
           </p>
         </Link>
-        <Link href="/dashboard/restaurants">
+        <Link href="/dashboard/restaurants/manage/menu">
           <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30">
             Add a menu or menu item!
           </p>

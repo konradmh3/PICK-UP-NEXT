@@ -2,7 +2,7 @@ import { lusitana } from "@/app/ui/fonts";
 import { fetchRestrauntMenu } from '@/app/lib/data';
 import MenuItemCard from '@/app/ui/menucard';
 
-export default async function Tempcards({
+export default async function Menu({
     searchParams,
   }: {
     searchParams?: {

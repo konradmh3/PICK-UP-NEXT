@@ -35,7 +35,7 @@ export default async function RestaurantsTable({
                   </div>
                   <div className="pl-3">
                     <Link
-                      href={`/dashboard/tempcards?restaurantID=${restaurant.id}`}
+                      href={`/dashboard/menu?restaurantID=${restaurant.id}`}
                       className="text-blue-500"
                     >
                       Menu
@@ -81,7 +81,7 @@ export default async function RestaurantsTable({
                   </td>
                   <td className="whitespace-nowrap py-3 pl-3 pr-3">
                     <Link
-                      href={`/dashboard/tempcards?restaurantID=${restaurant.id}`}
+                      href={`/dashboard/menu?restaurantID=${restaurant.id}`}
                       className="text-blue-500"
                     >
                       View
