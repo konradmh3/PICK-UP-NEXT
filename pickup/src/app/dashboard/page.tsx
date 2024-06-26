@@ -1,3 +1,45 @@
-export default function dashboard(){
-return <>This page is under construction! Check out the Restaurant Page on the nav bar!</>;
+import { lusitana } from "@/app/ui/fonts";
+import Link from "next/link";
+
+
+export default function dashboard() {
+  return (
+    <>
+      <div
+        className={`${lusitana.className} border-b-2 text-white flex flex-col justify-end p-4 pt-0 md:border-b-0 md:rounded-md md:pt-4 md:h-80 md:bg-orange-600`}
+      >
+        <p className="text-[44px]">Welcome to Pick Up</p>
+        <p className="text-[24px]">The best way to order food online!</p>
+      </div>
+      <div className={`${lusitana.className} text-white text-[18px] py-4 px-8`}>
+        This is a concept web app where users can explore a curated list of
+        restaurants, view their menus, and place orders for pickup with ease. If
+        you're a restaurant owner, you can add your restaurant and manage your
+        menus seamlessly.
+      </div>
+
+      <div
+        className={`${lusitana.className} border-t-2 text-white text-[18px] py-4 px-8`}
+      >
+        Use the following options to get started:
+      </div>
+      <div className="flex text-white flex-col">
+      <Link href="/dashboard/restaurants">
+          <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30">
+            Go to Restaurants and order!
+          </p>
+        </Link>
+        <Link href="/dashboard/restaurants">
+          <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30 ">
+            Add your Restaurant!
+          </p>
+        </Link>
+        <Link href="/dashboard/restaurants">
+          <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30">
+            Add a menu or menu item!
+          </p>
+        </Link>
+      </div>
+    </>
+  );
 }
