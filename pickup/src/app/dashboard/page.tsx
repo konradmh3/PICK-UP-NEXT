@@ -14,7 +14,7 @@ export default function dashboard() {
       <div className={`${lusitana.className} text-white text-[18px] py-4 px-8`}>
         This is a concept web app where users can explore a curated list of
         restaurants, view their menus, and place orders for pickup with ease. If
-        you're a restaurant owner, you can add your restaurant and manage your
+        you&apos;re a restaurant owner, you can add your restaurant and manage your
         menus seamlessly.
       </div>
 
