@@ -26,15 +26,15 @@ export default function dashboard() {
       <div className="flex text-white flex-col">
       <Link href="/dashboard/restaurants">
           <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30">
-            Go to Restaurants and order!
+            Go to restaurants and order!
           </p>
         </Link>
-        <Link href="/dashboard/restaurants/manage">
+        <Link href="/dashboard/manage/restaurant">
           <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30 ">
-            Add your Restaurant!
+            Add your restaurant!
           </p>
         </Link>
-        <Link href="/dashboard/restaurants/manage/menu">
+        <Link href="/dashboard/manage/menu">
           <p className="flex justify-center border-gray-300 py-4 border-white border-b hover:bg-zinc-800/30">
             Add a menu or menu item!
           </p>
