@@ -7,6 +7,7 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Button } from "@/app/ui/button";
+import { createMenuItem } from '@/app/lib/actions';
 
 export default function Form({
   restaurants,
@@ -14,7 +15,7 @@ export default function Form({
   restaurants: RestaurantField[];
 }) {
   return (
-    <form>
+    <form action={createMenuItem}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Restaurant Name */}
         <div className="mb-4">
@@ -60,7 +61,7 @@ export default function Form({
 
         <div className="mb-4">
           <label htmlFor="customize" className="mb-2 block text-sm font-medium">
-            Set the item name
+            Set the customizability
           </label>
           <div className="relative mt-2 rounded-md">
             <div className="relative">
