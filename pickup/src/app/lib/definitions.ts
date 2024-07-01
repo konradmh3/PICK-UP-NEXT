@@ -11,3 +11,10 @@ export type RestaurantsTable = {
     menuitem: string;
     customize: Array<string>;
   };
+
+  export type RestaurantField = {
+    id: string;
+    name: string;
+    phone: string;
+    address: string;
+  };

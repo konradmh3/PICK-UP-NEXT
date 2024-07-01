@@ -2,9 +2,23 @@ import { sql } from '@vercel/postgres';
 import {
   RestaurantsTable,
   MenuTable,
+  RestaurantField,
 } from './definitions';
 // import { formatCurrency } from './utils';
 import { unstable_noStore as noStore } from 'next/cache';
+
+
+export async function fetchRestaurants() {
+  noStore();
+
+  try {
+    const restaurants = await sql<RestaurantField>`SELECT * FROM restaurants`;
+    return restaurants.rows;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch restaurants.');
+  }
+}
 
 
 const ITEMS_PER_PAGE = 8;
