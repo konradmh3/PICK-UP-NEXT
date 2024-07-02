@@ -87,7 +87,7 @@ export async function createMenuItem(formData: FormData) {
         `;
 
         revalidatePath(`/dashboard/menu?restaurantID=${restaurantid}`);
-        revalidatePath(`/dashboard/manage/menu`);
-        redirect(`/dashboard/manage/menu`);
+        // lets refresh the page so all the form entries are cleared
+        redirect(`/dashboard/manage`);
 
 }
