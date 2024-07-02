@@ -42,6 +42,7 @@ export async function createRestaurant(formData: FormData) {
     `;
 
     revalidatePath(`/dashboard/restaurants`);
+    revalidatePath(`/dashboard/manage/menu`);
     redirect(`/dashboard/manage/menu`);
 }
 
@@ -86,6 +87,6 @@ export async function createMenuItem(formData: FormData) {
         `;
 
         revalidatePath(`/dashboard/menu?restaurantID=${restaurantid}`);
-        redirect(`/dashboard/menu?restaurantID=${restaurantid}`);
+        redirect(`/dashboard/manage/menu`);
 
 }
