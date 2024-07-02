@@ -52,6 +52,7 @@ export default function Form(
             </div>
           </div>
         </div>
+
         <div className="mb-4">
           <label htmlFor="phone" className="mb-2 block text-sm font-medium">
             Set the restaurant phone number
@@ -62,6 +63,8 @@ export default function Form(
                 id="phone"
                 name="phone"
                 type="string"
+                pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}"
+                // required
                 placeholder="(xxx)xxx-xxxx"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"
               />
@@ -69,6 +72,11 @@ export default function Form(
             </div>
           </div>
         </div>
+
+        
+
+
+
 
       </div>
       <div className="mt-6 flex justify-end gap-4">

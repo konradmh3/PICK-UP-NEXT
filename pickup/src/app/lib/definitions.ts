@@ -17,4 +17,5 @@ export type RestaurantsTable = {
     name: string;
     phone: string;
     address: string;
+    test: number;
   };
