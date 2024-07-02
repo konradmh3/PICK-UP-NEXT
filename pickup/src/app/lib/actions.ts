@@ -87,6 +87,7 @@ export async function createMenuItem(formData: FormData) {
         `;
 
         revalidatePath(`/dashboard/menu?restaurantID=${restaurantid}`);
+        revalidatePath(`/dashboard/manage/menu`);
         redirect(`/dashboard/manage/menu`);
 
 }
