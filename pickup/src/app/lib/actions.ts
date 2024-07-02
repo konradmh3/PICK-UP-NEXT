@@ -2,6 +2,9 @@
 
 import { sql } from "@vercel/postgres";
 import { z } from "zod";
+import { revalidatePath } from 'next/cache';
+import { redirect } from "next/navigation";
+
 
 // Validation schema for creating a restaurant
 const CreateRestaurantSchema = z.object({
@@ -38,12 +41,14 @@ export async function createRestaurant(formData: FormData) {
         )
     `;
 
+    revalidatePath(`/dashboard/restaurants`);
+    redirect(`/dashboard/manage/menu`);
 }
 
 // Validation schema for creating a menu item
 const CreateMenuItemSchema = z.object({
   id: z.string(),
-  restaurantid: z.string(),
+  restaurantid: z.coerce.number(),
   menuitem: z.string(),
   customize: z.string(),
   amount: z.coerce.number(),
@@ -61,16 +66,26 @@ export async function createMenuItem(formData: FormData) {
   const amountInCents = amount * 100;
     const customizeJson = JSON.stringify(customize.split(",").map((c) => c.trim()));
 
-    // before inserting the menu item, we need to remove any existing menu items with the same name
-    await sql`
-            DELETE FROM menus
-            WHERE restaurantid = ${restaurantid}
-            AND menuitem = ${menuitem}
-        `;
-
 
     await sql`
             INSERT INTO menus (restaurantid, menuitem, customize, amount)
             VALUES (${restaurantid}, ${menuitem}, ${customizeJson}, ${amountInCents})
         `;
+
+            // after adding lets remove duplicate menu items
+    await sql`
+            DELETE FROM menus
+            WHERE id IN (
+                SELECT id
+                FROM (
+                    SELECT id, ROW_NUMBER() OVER (partition BY restaurantid, menuitem, customize) AS rnum
+                    FROM menus
+                ) t
+                WHERE t.rnum > 1
+            )
+        `;
+
+        revalidatePath(`/dashboard/menu?restaurantID=${restaurantid}`);
+        redirect(`/dashboard/menu?restaurantID=${restaurantid}`);
+
 }
