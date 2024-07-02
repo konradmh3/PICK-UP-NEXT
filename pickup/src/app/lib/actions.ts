@@ -24,6 +24,20 @@ export async function createRestaurant(formData: FormData) {
         INSERT INTO restaurants (name, phone, address)
         VALUES (${name}, ${phone}, ${address})
     `;
+
+    // after adding lets remove duplicate restaurants
+    await sql`
+        DELETE FROM restaurants
+        WHERE id IN (
+            SELECT id
+            FROM (
+                SELECT id, ROW_NUMBER() OVER (partition BY name, phone, address ORDER BY id) AS rnum
+                FROM restaurants
+            ) t
+            WHERE t.rnum > 1
+        )
+    `;
+
 }
 
 // Validation schema for creating a menu item
@@ -46,6 +60,13 @@ export async function createMenuItem(formData: FormData) {
   });
   const amountInCents = amount * 100;
     const customizeJson = JSON.stringify(customize.split(",").map((c) => c.trim()));
+
+    // before inserting the menu item, we need to remove any existing menu items with the same name
+    await sql`
+            DELETE FROM menus
+            WHERE restaurantid = ${restaurantid}
+            AND menuitem = ${menuitem}
+        `;
 
 
     await sql`

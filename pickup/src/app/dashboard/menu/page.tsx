@@ -17,7 +17,7 @@ export default async function Menu({
     //     item.customize = item.customize.split(',').map((custom) => custom.trim());
     //   });
 
-    var restaurantName = 'Select A Restaurant Menu in the Restaurant Page';
+    var restaurantName = 'There is no items to display. Please select A Restaurant Menu on the Restaurant Page';
     
     if(restarauntMenuItems[0] !== undefined){
         restaurantName = restarauntMenuItems[0].name + " Menu:";
