@@ -19,14 +19,14 @@ export default function Form(
 
         {/* Invoice Amount */}
         <div className="mb-4">
-          <label htmlFor="restaurant" className="mb-2 block text-sm font-medium">
+          <label htmlFor="name" className="mb-2 block text-sm font-medium">
             Set the restaurant name
           </label>
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                id="restaurant"
-                name="restaurant"
+                id="name"
+                name="name"
                 type="string"
                 placeholder="Enter name of the restaurant"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-2 text-sm outline-2 placeholder:text-gray-500"

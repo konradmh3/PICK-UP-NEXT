@@ -12,6 +12,11 @@ export default async function Menu({
 
     const restaurantID = Number(searchParams?.restaurantID || '');
     const restarauntMenuItems =  await fetchRestrauntMenu(restaurantID);
+    // for each item in the menu, edit the customize string to an array of strings
+    // restarauntMenuItems.forEach((item) => {
+    //     item.customize = item.customize.split(',').map((custom) => custom.trim());
+    //   });
+
     var restaurantName = 'Select A Restaurant Menu in the Restaurant Page';
     
     if(restarauntMenuItems[0] !== undefined){

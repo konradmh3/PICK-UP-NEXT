@@ -5,12 +5,12 @@ export default function MenuItemCard({ item }: { item: {name: string; menuitem: 
                 <p className="flex text-lg flex-wrap">{item.menuitem}</p>
                 <p className="text-lg">$10</p>
             </div>
-            <p className="text-sm">
+            <div className="text-sm">
                 Customize: 
                 {item.customize.map((custom, index) => (
                     <div key={index} className="text-xs bg-gray-500 rounded-md w-fit my-2 px-1">{custom}</div>
                 ))}
-            </p>
+            </div>
         </div>
     )
 }
