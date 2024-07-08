@@ -1,5 +1,6 @@
 import { lusitana } from "@/app/ui/fonts";
 import Link from "next/link";
+import Image from "next/image";
 
 
 export default function dashboard() {
@@ -8,7 +9,18 @@ export default function dashboard() {
       <div
         className={`${lusitana.className} border-b-2 text-white flex flex-col justify-end p-4 pt-0 md:border-b-0 md:rounded-md md:pt-4 md:h-80 md:bg-orange-600`}
       >
-        <p className="text-[44px]">Welcome to Pick Up</p>
+        <div className="flex items-center">
+        <p className="text-[44px]">Welcome to Pick Up
+        </p>
+        <Image
+              className="hidden md:block"
+              src="/burritoEmoji.svg"
+              alt="Vercel Logo"
+              width={100}
+              height={24}
+              priority
+            />
+            </div>
         <p className="text-[24px]">The best way to order food online!</p>
       </div>
       <div className={`${lusitana.className} text-white text-[18px] py-4 px-8`}>
