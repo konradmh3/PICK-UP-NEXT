@@ -13,10 +13,10 @@ export default function dashboard() {
         <p className="text-[44px]">Welcome to Pick Up
         </p>
         <Image
-              className="hidden md:block"
+              className="hidden ml-4 md:block"
               src="/burritoEmoji.svg"
               alt="Vercel Logo"
-              width={100}
+              width={80}
               height={24}
               priority
             />
