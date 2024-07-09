@@ -10,6 +10,7 @@ export type RestaurantsTable = {
     name: string;
     menuitem: string;
     customize: Array<string>;
+    amount: number;
   };
 
   export type RestaurantField = {

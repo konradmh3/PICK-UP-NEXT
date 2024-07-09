@@ -16,7 +16,7 @@ export default function Nav() {
           <Image
             className="block ml-3 md:hidden"
             src="/burritoEmoji.svg"
-            alt="Vercel Logo"
+            alt="burrito emoji Logo"
             width={45}
             height={12}
             priority

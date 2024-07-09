@@ -75,7 +75,7 @@ export async function fetchRestrauntMenu(id: number) {
   noStore();
 
   try {
-    const menu = await sql<MenuTable>`SELECT restaurants.name, menus.menuitem, menus.customize FROM 
+    const menu = await sql<MenuTable>`SELECT restaurants.name, menus.menuitem, menus.customize, menus.amount FROM 
     menus INNER JOIN restaurants ON menus.restaurantid = restaurants.id WHERE restaurants.id = ${id}`;
     console.log('menu:', menu);
     console.log('menu.rows:', menu.rows);

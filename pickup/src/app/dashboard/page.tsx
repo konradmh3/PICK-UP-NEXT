@@ -15,7 +15,7 @@ export default function dashboard() {
         <Image
               className="hidden ml-4 md:block"
               src="/burritoEmoji.svg"
-              alt="Vercel Logo"
+              alt="burrito emoji Logo"
               width={80}
               height={24}
               priority
